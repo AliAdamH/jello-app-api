@@ -47,4 +47,4 @@ group :development do
 end
 
 
-gem "jsonapi-serializer", "~> 2.2"
+gem "alba", "~> 2.0"

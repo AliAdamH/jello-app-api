@@ -66,6 +66,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    alba (2.0.0)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -82,8 +83,6 @@ GEM
     io-console (0.5.11)
     irb (1.4.2)
       reline (>= 0.3.0)
-    jsonapi-serializer (2.2.0)
-      activesupport (>= 4.2)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -158,9 +157,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  alba (~> 2.0)
   bootsnap
   debug
-  jsonapi-serializer (~> 2.2)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
