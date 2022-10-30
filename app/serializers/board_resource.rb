@@ -5,5 +5,7 @@ class BoardResource
 
   attributes :id, :title, :col_order_ids
 
+  transform_keys :lower_camel
+
   many :columns, resource: ColumnResource
 end
