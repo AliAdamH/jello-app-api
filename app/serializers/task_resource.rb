@@ -3,6 +3,8 @@ class TaskResource
 
   root_key :task, :tasks
 
-  attributes :id, :title, :description
+  collection_key :id
+
+  attributes :title, :description, id: [String, true]
 
 end

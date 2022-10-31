@@ -3,7 +3,9 @@ class ColumnResource
 
   root_key :column, :columns
 
-  attributes :id, :title, :task_orders
+  collection_key :id
+
+  attributes :task_orders, id:[String, true], title: [String, true]
 
   many :tasks, resource: TaskResource
 end
