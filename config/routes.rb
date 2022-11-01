@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :boards 
       put '/tasks/:id', to: 'tasks#move'
+      put '/order_tasks/:id', to: "columns#update_task_orders"
     end
   end
 end
