@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :boards 
       put '/tasks/:id', to: 'tasks#move'
       put '/order_tasks/:id', to: "columns#update_task_orders"
+      put '/order_columns/:id', to: "boards#update_column_order"
     end
   end
 end
