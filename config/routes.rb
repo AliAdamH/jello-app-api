@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :boards
+      post '/columns', to: 'columns#create'
       post '/tasks', to: 'tasks#create'
       put '/tasks/:id', to: 'tasks#move'
       put '/order_tasks/:id', to: "columns#update_task_orders"

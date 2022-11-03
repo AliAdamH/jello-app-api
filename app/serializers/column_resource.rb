@@ -7,5 +7,7 @@ class ColumnResource
 
   attributes :task_orders, id:[String, true], title: [String, true]
 
+  transform_keys :lower_camel
+
   many :tasks, resource: TaskResource
 end
