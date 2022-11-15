@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       post '/columns', to: 'columns#create'
       post '/tasks', to: 'tasks#create'
       put '/tasks/:id', to: 'tasks#move'
+      get '/tasks/:id', to: 'tasks#show'
       put '/order_tasks/:id', to: "columns#update_task_orders"
       put '/order_columns/:id', to: "boards#update_column_order"
     end

@@ -18,4 +18,14 @@ class Api::V1::TasksController < ApplicationController
     to_col.update(task_orders: params[:to_col][:task_orders])
   end
 
+
+  def show
+    @task = Task.find(params[:id])
+    if @task
+      render json: TaskResource.new(@task).serializable_hash
+    else
+      render json: { status: 404 }
+    end
+  end
+
 end

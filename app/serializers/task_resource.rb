@@ -5,6 +5,8 @@ class TaskResource
 
   collection_key :id
 
-  attributes :title, :description, id: [String, true]
+  transform_keys :lower_camel
+
+  attributes :title, :description, column_id: [String ,true],  id: [String, true]
 
 end
