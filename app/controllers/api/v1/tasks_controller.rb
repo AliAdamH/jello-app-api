@@ -28,4 +28,12 @@ class Api::V1::TasksController < ApplicationController
     end
   end
 
+  def update
+    @task = Task.find(params[:task][:id])
+    if @task.update(title: params[:task][:title], description: params[:task][:description])
+      head 204
+    else
+      render json: { status: 500 }
+    end
+  end
 end
