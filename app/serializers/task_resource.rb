@@ -7,6 +7,6 @@ class TaskResource
 
   transform_keys :lower_camel
 
-  attributes :title, :description, column_id: [String ,true],  id: [String, true]
+  attributes :title, :description, :cover_color, :cover_text_color, column_id: [String ,true],  id: [String, true]
 
 end
