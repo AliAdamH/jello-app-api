@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
   belongs_to :column
-
+  has_and_belongs_to_many :labels
   after_create :update_col_task_order
 
 
