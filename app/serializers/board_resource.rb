@@ -8,5 +8,4 @@ class BoardResource
   transform_keys :lower_camel
 
   many :columns, resource: ColumnResource
-  many :labels, resource: LabelResource
 end
