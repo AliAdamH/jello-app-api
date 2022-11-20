@@ -1,5 +1,19 @@
 class Api::V1::LabelsController < ApplicationController
 
+
+  def create
+    @label = Label.new(
+      name: params[:label][:name],
+      color: params[:label][:color],
+      board_id: params[:label][:board_id]
+    )
+    if @label.save
+      render json: LabelResource.new(@label).serializable_hash
+    else
+      render json: { status: 500 }
+    end
+  end
+
   def update
     @label = Label.find(params[:label][:id])
     if @label&.update(name: params[:label][:name], color: params[:label][:color])
