@@ -31,4 +31,14 @@ class Api::V1::LabelsController < ApplicationController
       head 422
     end
   end
+
+  def destroy
+    @label = Label.find(params[:label][:id])
+    if @label
+      @label.destroy
+      head 204
+    else
+      head 422
+    end
+  end
 end
