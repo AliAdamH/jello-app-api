@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       put '/order_columns/:id', to: "boards#update_column_order"
       put '/labels', to: 'labels#update'
       post '/labels', to: 'labels#create'
+      post '/task_labels', to: 'task_labels#create'
+      get '/labels', to: 'labels#index'
     end
   end
 end
