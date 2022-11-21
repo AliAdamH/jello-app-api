@@ -1,6 +1,15 @@
 class Api::V1::LabelsController < ApplicationController
 
 
+  def index
+    @labels = Label.all.where(board: Board.last)
+    if @labels
+      render json: LabelResource.new(@labels)
+    else
+      render json: { status: 404 }
+    end
+  end
+
   def create
     @label = Label.new(
       name: params[:label][:name],
