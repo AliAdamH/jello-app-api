@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       post '/labels', to: 'labels#create'
       post '/task_labels', to: 'task_labels#create'
       get '/labels', to: 'labels#index'
+      delete '/task_labels', to: 'task_labels#destroy'
     end
   end
 end
