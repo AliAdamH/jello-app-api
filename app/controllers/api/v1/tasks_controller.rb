@@ -33,7 +33,8 @@ class Api::V1::TasksController < ApplicationController
     if @task.update(title: params[:task][:title], 
                     description: params[:task][:description],
                     cover_color: params[:task][:coverColor],
-                    cover_text_color: params[:task][:coverTextColor])
+                    cover_text_color: params[:task][:coverTextColor],
+                    due_date: params[:task][:dueDate])
       head 204
     else
       render json: { status: 500 }
