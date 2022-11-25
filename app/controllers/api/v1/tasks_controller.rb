@@ -30,11 +30,12 @@ class Api::V1::TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:task][:id])
-    if @task.update(title: params[:task][:title], 
+    if @task.update(title: params[:task][:title],
                     description: params[:task][:description],
                     cover_color: params[:task][:coverColor],
                     cover_text_color: params[:task][:coverTextColor],
-                    due_date: params[:task][:dueDate])
+                    due_date: params[:task][:dueDate],
+                    due_date_status: params[:task][:dueDateStatus])
       head 204
     else
       render json: { status: 500 }

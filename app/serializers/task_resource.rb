@@ -9,6 +9,6 @@ class TaskResource
 
   many :labels, resource: LabelResource
 
-  attributes :title, :description,:due_date, :cover_color, :cover_text_color, column_id: [String ,true],  id: [String, true]
+  attributes :title, :description, :due_date, :due_date_status, :cover_color, :cover_text_color, column_id: [String ,true],  id: [String, true]
 
 end

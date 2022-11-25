@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_25_053854) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_25_083622) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_053854) do
     t.string "cover_color", default: "#ffffff"
     t.string "cover_text_color", default: "#000000"
     t.date "due_date"
+    t.integer "due_date_status"
     t.index ["column_id"], name: "index_tasks_on_column_id"
   end
 
