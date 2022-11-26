@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :boards
       post '/columns', to: 'columns#create'
+      delete 'columns', to: 'columns#destroy'
       post '/tasks', to: 'tasks#create'
       put '/tasks', to: 'tasks#update'
       put '/move_tasks/:id', to: 'tasks#move'
