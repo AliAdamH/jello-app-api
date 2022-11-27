@@ -41,4 +41,14 @@ class Api::V1::TasksController < ApplicationController
       render json: { status: 500 }
     end
   end
+
+  def destroy
+    @task = Task.find(params[:id])
+    if @task
+      @task.destroy
+      head 204
+    else
+      head 422
+    end
+  end
 end

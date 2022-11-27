@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       delete 'columns', to: 'columns#destroy'
       post '/tasks', to: 'tasks#create'
       put '/tasks', to: 'tasks#update'
+      delete '/tasks', to: 'tasks#destroy'
       put '/move_tasks/:id', to: 'tasks#move'
       get '/tasks/:id', to: 'tasks#show'
       put '/order_tasks/:id', to: "columns#update_task_orders"
