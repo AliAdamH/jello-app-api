@@ -1,6 +1,7 @@
 class Api::V1::BoardsController < ApplicationController
   def index
-    render json: BoardResource.new(Board.last).serializable_hash
+    @board = Board.includes(columns: {tasks: :labels}).last
+    render json: BoardResource.new(@board).serializable_hash
   end
 
   def update_column_order
