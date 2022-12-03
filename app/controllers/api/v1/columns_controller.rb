@@ -17,6 +17,14 @@ class Api::V1::ColumnsController < ApplicationController
     @column = Column.find(params[:column][:id]).update(task_orders: params[:column][:task_orders])
   end
 
+  def update
+    @column = Column.find(params[:column][:id])
+    if @column.update(title: params[:column][:title])
+      head 204
+    else
+      render json: { status: 500 }
+    end
+  end
 
   def destroy
     @column = Column.find(params[:id])
