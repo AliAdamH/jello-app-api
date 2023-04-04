@@ -1,4 +1,13 @@
 class Api::V1::TasksController < ApplicationController
+  def index
+    @tasks = Board.find(params[:board]).tasks.includes(:labels)
+    if @tasks
+      render json: TaskResource.new(@tasks).serializable_hash
+    else
+      render json: {status: 404}
+    end
+  end
+
   def create
     @task = Task.new(column_id: params[:task][:column_id], title: params[:task][:title])
     if @task.save

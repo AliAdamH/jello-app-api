@@ -1,6 +1,6 @@
 class Api::V1::BoardsController < ApplicationController
   def index
-    @board = Board.includes(:columns, tasks: :labels).last
+    @board = Board.includes(:columns).last
     render json: BoardResource.new(@board).serializable_hash
   end
 

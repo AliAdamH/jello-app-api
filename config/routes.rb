@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :boards
       post '/columns', to: 'columns#create'
       delete 'columns', to: 'columns#destroy'
+      get '/tasks', to: 'tasks#index'
       post '/tasks', to: 'tasks#create'
       put '/tasks', to: 'tasks#update'
       delete '/tasks', to: 'tasks#destroy'
